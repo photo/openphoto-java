@@ -11,9 +11,9 @@ To use the library you need to first include openphoto.jar in your project, then
     OpenPhotoClient client = new OpenPhotoClient(host, consumerKey, token, tokenSecret);
  
  	// it will get a list of objects 
-    List list = client.rawGet('/photos/list.json');
+    List list = client.rawGet("/photos/list.json");
     // it will post
-    client.rawPost('/photo/62/update.json', array('tags' => 'tag1,tag2'));
+    client.rawPost("/photo/62/update.json", array('tags' => 'tag1,tag2'));
   
 
 ----------------------------------------
@@ -26,10 +26,6 @@ First, set the details on TestEnvironment.java
      consumerSecret=your_consumer_secret
      token=your_access_token
      tokenSecret=your_access_token_secret
-
-You'll need to source that file once for each terminal session.
-    
-    source env.sh
 
 #### Getting your credentials
 
