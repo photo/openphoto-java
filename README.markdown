@@ -10,7 +10,7 @@ To use the library you need to first include openphoto.jar in your project, then
     
     OpenPhotoClient client = new OpenPhotoClient(host, consumerKey, consumerSecret, token, tokenSecret);
  
- 	// it will get a list of objects 
+    // it will get the list of photos in the server 
     String result = client.rawGet("/photos/list.json", null);
     
 ## System PROPERTIES
