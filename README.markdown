@@ -6,22 +6,34 @@ Open Photo API / Java Library
 
 ### How to use the library
 
-To use the library you need to first include openphoto.jar in your project, then instantiate an instance of the class OpenPhotoClient and start making calls.
+To use the library you need to first include openphoto.jar in your project, then instantiate the class OpenPhotoClient and start making calls.
     
-    OpenPhotoClient client = new OpenPhotoClient(host, consumerKey, token, tokenSecret);
+    OpenPhotoClient client = new OpenPhotoClient(host, consumerKey, consumerSecret, token, tokenSecret);
  
  	// it will get a list of objects 
     List list = client.rawGet("/photos/list.json");
-    // it will post
-    client.rawPost("/photo/62/update.json", array('tags' => 'tag1,tag2'));
-  
+    
+## System PROPERTIES
+
+	# env.sh
+	export host=your_host
+	export consumerKey=your_consumer_key
+	export consumerSecret=your_consumer_secret
+	export token=your_access_token
+	export tokenSecret=your_access_token_secret    
 
 ----------------------------------------
 ### JUnit Test
 
 You can test the client with JUnit.
-First, set the details on TestEnvironment.java
+First, set the details on ConfigurationProperties.java.
+You can start the client also like that:
+	
+	// first checks if the parameters are defined as system properties
+	// otherwise look inside ConfigurationProperties
+	OpenPhotoClient client = new OpenPhotoClient();	
 
+     host = your_host
      consumerKey=your_consumer_key
      consumerSecret=your_consumer_secret
      token=your_access_token

@@ -5,5 +5,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
 	<classpathentry kind="lib" path="lib/gson-1.7.1.jar" sourcepath="src-lib/gson-1.7.1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/scribe-1.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.5.jar" sourcepath="src-lib/commons-codec-1.5-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
