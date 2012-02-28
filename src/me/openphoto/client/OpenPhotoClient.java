@@ -19,6 +19,7 @@ public class OpenPhotoClient {
 	private String consumerSecret;
 	private String token;
 	private String tokenSecret;
+	
 
 	public OpenPhotoClient(String host, String consumerKey, String consumerSecret, String token, String tokenSecret) {
 		this.host = host;
@@ -56,13 +57,14 @@ public class OpenPhotoClient {
 				.apiSecret(consumerSecret).build();
 		Token accessToken = new Token(token, tokenSecret);
 		OAuthRequest request = new OAuthRequest(Verb.GET, host + endpoint);
-		service.signRequest(accessToken, request);
 
 		if (parameters != null) {
 			for (Entry<String, String> parameter : parameters.entrySet()) {
-				request.addBodyParameter(parameter.getKey(), parameter.getValue());
+				request.addQuerystringParameter(parameter.getKey(), parameter.getValue());
 			}
 		}
+		
+		service.signRequest(accessToken, request);
 
 		Response response = request.send();
 		return response.getBody();
