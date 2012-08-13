@@ -13,4 +13,11 @@ public class ListPhotos extends TestCase {
 		assertNotNull("Answer should not be null", result);
 		System.out.println(result);
 	}
+	
+	public void testGetAlbums() {
+		OpenPhotoClient client = new OpenPhotoClient();
+		String result = client.rawGet("/albums/list.json", null);
+		assertNotNull("Answer should not be null", result);
+		System.out.println(result);
+	}
 }
